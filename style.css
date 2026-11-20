@@ -1,0 +1,178 @@
+:root {
+    --navy: #1e3a8a;
+    --navy-dark: #152a66;
+    --accent: #c8102e;
+    --paper: #ffffff;
+    --page: #eef1f7;
+    --text: #1f2430;
+    --muted: #5b6372;
+    --line: #d5dbe8;
+    --row: #f5f7fc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 44px 20px 36px;
+    border-bottom: 6px solid var(--accent);
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    letter-spacing: 0.5px;
+}
+
+.site-header h3 {
+    margin: 8px 0 0;
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: #dbe4ff;
+}
+
+.site-header h4 {
+    display: inline-block;
+    margin: 18px 0 0;
+    padding: 6px 18px;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* ---------- Layout ---------- */
+main {
+    max-width: 820px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+.intro {
+    background: var(--paper);
+    border-left: 5px solid var(--navy);
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin: 0 0 24px;
+    color: var(--muted);
+}
+
+section {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+}
+
+section h3 {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    font-size: 1.3rem;
+    color: var(--navy);
+    border-bottom: 2px solid var(--line);
+}
+
+section p { margin: 0 0 12px; }
+section p:last-child { margin-bottom: 0; }
+
+/* ---------- Lists ---------- */
+ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+li { margin: 4px 0; }
+li::marker { color: var(--accent); }
+
+ul ul { margin-top: 4px; }
+ul ul li::marker { color: var(--navy); }
+
+/* ---------- Tables ---------- */
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.97rem;
+}
+
+th, td {
+    padding: 11px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+}
+
+thead th {
+    background: var(--navy);
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+tbody tr:nth-child(even) { background: var(--row); }
+tbody tr:last-child td { border-bottom: 0; }
+
+/* marks table: numbers line up on the right */
+table:not(.timetable) th:not(:first-child),
+table:not(.timetable) td:not(:first-child) {
+    text-align: center;
+}
+
+tr.total td {
+    background: #e3e9f8;
+    font-weight: 700;
+}
+
+tr.total td:first-child { text-align: right; }
+
+tr.result td { font-weight: 600; background: var(--paper); }
+
+.badge {
+    display: inline-block;
+    padding: 2px 16px;
+    background: #1f8a4c;
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/* timetable */
+.timetable td:first-child { font-weight: 600; color: var(--navy); }
+.timetable .free { color: var(--muted); font-style: italic; }
+.timetable .holiday {
+    text-align: center;
+    background: #fdecee;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 24px 16px 32px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 560px) {
+    .site-header h1 { font-size: 1.7rem; }
+    section { padding: 18px 16px; }
+    th, td { padding: 9px 10px; }
+}
